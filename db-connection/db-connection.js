@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-let db_link = 'mongodb://127.0.0.1:27017/Food24X7'
+let db_link = 'mongodb://127.0.0.1:27017/Food24X7';
 
-mongoose.set('strictQuery', false);
+mongoose.set('strictQuery', true);
 
 let database;
 async function connectToDatabase() {

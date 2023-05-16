@@ -12,4 +12,5 @@ const fileUpload = multer.diskStorage({
         cb(null, Date.now()+ '_' + file.originalname)
     }
 })
+
 exports.FileRead = multer({storage: fileUpload,fileFilter: fileFilter});

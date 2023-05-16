@@ -20,6 +20,7 @@ module.exports = {
     }
   },
   async signUp(req, res) {
+    console.log('==========signUp')
     if (req.body.email) {
       await authModel.findOne({ email: req.body.email }).then((emailRes) => {
         if (emailRes) {
@@ -88,6 +89,8 @@ module.exports = {
     }
   },
   async login(req, res) {
+    console.log('==========login')
+
     if (req.body.email && req.body.password) {
       await authModel
         .findOne({ email: req.body.email })
@@ -111,7 +114,7 @@ module.exports = {
                       { expiresIn: '24h' },
                     )
                     res.status(200).send({
-                      message: 'Login successfully done!!!',
+                      message: `Hi, ${emailRes.name} welcome!!!`,
                       res: emailRes,
                       token,
                     })
